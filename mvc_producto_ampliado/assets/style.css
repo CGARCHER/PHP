@@ -1,0 +1,12 @@
+header h1{
+    text-align: center;
+}
+
+main, footer{
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+
+body{
+    background-color: hsl(276, 2%, 41%);
+}

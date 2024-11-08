@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+
+    #Error404
+    #ErrorDocument 404 http://localhost/2024-11-05/view/error404.php
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^producto/lista$ index.php?action=listProduct [L]
+	RewriteRule ^producto/nuevo$ index.php?action=addProduct [L]
+	RewriteRule ^producto/buscar$ index.php?action=searchProduct [L]
+    RewriteRule ^producto/insertar$ index.php?action=insertProduct [L]
+    
+    #Forma generica para las 4 opciones
+    #RewriteRule ^([a-zA-Z]+)[/]?$ index.php?action=$1 [L]
+
+</IfModule>
+
+# Flag: [L]
+# Stop the rewriting process immediately and don't apply any more rules. 
+
+# Referencia:
+# - https://httpd.apache.org/docs/current/mod/mod_rewrite.html
